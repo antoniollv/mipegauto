@@ -33,5 +33,5 @@ RUN mkdir -p /mnt/gegauto
 
 VOLUME ["/mnt/pegauto"]
 
-ENTRYPOINT /usr/local/openjdk-8/bin/java -Dlog4j.configuration=file:'./log4j.properties' -jar pegauto.jar && /usr/local/openjdk-8/bin/java -cp './*' com.amazonaws.services.lambda.runtime.api.client.AWSLambda example.App::sayHello
+ENTRYPOINT /usr/local/openjdk-8/bin/java -cp './*' -Dlog4j.configuration=file:'./log4j.properties' -jar pegauto.jar && /usr/local/openjdk-8/bin/java -cp './*' com.amazonaws.services.lambda.runtime.api.client.AWSLambda example.App::sayHello
 
